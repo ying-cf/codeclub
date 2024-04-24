@@ -11,19 +11,8 @@
  * Learn more at https://developers.cloudflare.com/workers/
  */
 
-// src/index.ts
-var src_default = {
-  async fetch(request, env, ctx) {
-    if(request.method.toUpperCase()=="POST") {
-      return new Response("Thank you for submitting the reponse!")
-    }
-    else {
-         return new Response("Hello World!");
-    }
-  }
+export default {
+	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+		return new Response('Hello World!');
+	},
 };
-export {
-  src_default as default
-};
-//# sourceMappingURL=index.js.map
-
